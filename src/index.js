@@ -19,8 +19,3 @@ fetch( `${baseUrl}/characters`)
     })
 })
 
-// function displayInfo(character) {
-//     fetch(`${baseUrl}/characters/${character.id}`)
-//       .then(response => response.json())
-//       .then(data => console.log(data.name))
-// }
