@@ -21,15 +21,18 @@ fetch( `${baseUrl}/characters`)
     })
 })
 
-    //grab the voting form by ID 
-    let votesForm = document.getElementById("votes-form")
+//grab the voting form by ID 
+let votesForm = document.getElementById("votes-form")
 
-    votesForm.addEventListener('submit', (e) =>{
-        e.preventDefault(); //prevents the page from reloading when submit is clicked
-        addVote(e.target.votes.value) //the value in the input box is passed as an argument to the function
-        votesForm.reset() //input box becomes blank on submit click
-    })
-   
+votesForm.addEventListener('submit', (e) =>{
+    e.preventDefault(); //prevents the page from reloading when submit is clicked
+    addVote(e.target.votes.value) //the value in the input box is passed as an argument to the function
+    votesForm.reset() //input box becomes blank on submit click
+})
+let resetBtn = document.getElementById('reset-btn')
+    resetBtn.addEventListener('click', ()=> {
+    return document.getElementById('vote-count').innerHTML = 0
+})
 
 function addVote(voteCount){
     document.getElementById('vote-count').innerHTML = `${voteCount}`
